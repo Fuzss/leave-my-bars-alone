@@ -1,7 +1,7 @@
-package fuzs.leavemybarsalone.mixin.client;
+package fuzs.leavemybarsalone.common.mixin.client;
 
-import fuzs.leavemybarsalone.LeaveMyBarsAlone;
-import fuzs.leavemybarsalone.config.ClientConfig;
+import fuzs.leavemybarsalone.common.LeaveMyBarsAlone;
+import fuzs.leavemybarsalone.common.config.ClientConfig;
 import net.minecraft.client.gui.Gui;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;

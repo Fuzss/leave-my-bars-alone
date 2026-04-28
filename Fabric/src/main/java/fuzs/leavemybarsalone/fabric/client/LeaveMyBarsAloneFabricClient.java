@@ -1,7 +1,7 @@
 package fuzs.leavemybarsalone.fabric.client;
 
-import fuzs.leavemybarsalone.LeaveMyBarsAlone;
-import fuzs.leavemybarsalone.client.LeaveMyBarsAloneClient;
+import fuzs.leavemybarsalone.common.LeaveMyBarsAlone;
+import fuzs.leavemybarsalone.common.client.LeaveMyBarsAloneClient;
 import fuzs.puzzleslib.common.api.client.core.v1.ClientModConstructor;
 import net.fabricmc.api.ClientModInitializer;
 

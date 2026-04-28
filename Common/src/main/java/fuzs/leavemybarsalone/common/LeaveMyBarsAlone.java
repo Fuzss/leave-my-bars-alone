@@ -1,9 +1,8 @@
-package fuzs.leavemybarsalone;
+package fuzs.leavemybarsalone.common;
 
-import fuzs.leavemybarsalone.config.ClientConfig;
+import fuzs.leavemybarsalone.common.config.ClientConfig;
 import fuzs.puzzleslib.common.api.config.v3.ConfigHolder;
 import fuzs.puzzleslib.common.api.core.v1.ModConstructor;
-import net.minecraft.resources.Identifier;
 import net.minecraft.resources.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

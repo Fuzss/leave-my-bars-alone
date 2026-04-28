@@ -1,6 +1,6 @@
 package fuzs.leavemybarsalone.fabric;
 
-import fuzs.leavemybarsalone.LeaveMyBarsAlone;
+import fuzs.leavemybarsalone.common.LeaveMyBarsAlone;
 import fuzs.puzzleslib.common.api.core.v1.ModConstructor;
 import net.fabricmc.api.ModInitializer;
 
