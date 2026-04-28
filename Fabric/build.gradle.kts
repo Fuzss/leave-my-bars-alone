@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    modApi(libs.fabricapi.fabric)
-    modApi(libs.puzzleslib.fabric)
-    modLocalRuntime(libs.appleskin.fabric)
+    modApi(sharedLibs.fabricapi.fabric)
+    modApi(sharedLibs.puzzleslib.fabric)
+    modLocalRuntime(sharedLibs.appleskin.fabric)
 }
