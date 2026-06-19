@@ -2,21 +2,21 @@ package fuzs.leavemybarsalone.common.mixin.client;
 
 import fuzs.leavemybarsalone.common.LeaveMyBarsAlone;
 import fuzs.leavemybarsalone.common.config.ClientConfig;
-import net.minecraft.client.gui.Gui;
+import net.minecraft.client.gui.Hud;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
-@Mixin(Gui.class)
-abstract class GuiMixin {
+@Mixin(Hud.class)
+abstract class HudMixin {
 
     @ModifyVariable(method = "nextContextualInfoState", at = @At("STORE"), ordinal = 1)
-    private boolean nextContextualInfoState(boolean pickJumpInfo) {
+    private boolean nextContextualInfoState(boolean canShowVehicleJumpInfo) {
         if (LeaveMyBarsAlone.CONFIG.get(ClientConfig.class).experienceBar) {
-            return pickJumpInfo && this.willPrioritizeJumpInfo();
+            return canShowVehicleJumpInfo && this.willPrioritizeJumpInfo();
         } else {
-            return pickJumpInfo;
+            return canShowVehicleJumpInfo;
         }
     }
 

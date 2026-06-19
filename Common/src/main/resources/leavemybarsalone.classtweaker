@@ -1,2 +1,2 @@
 classTweaker    v2  official
-accessible  method  net/minecraft/client/gui/Gui    extractFood (Lnet/minecraft/client/gui/GuiGraphicsExtractor;Lnet/minecraft/world/entity/player/Player;II)V
+accessible  method  net/minecraft/client/gui/Hud    extractFood (Lnet/minecraft/client/gui/GuiGraphicsExtractor;Lnet/minecraft/world/entity/player/Player;II)V

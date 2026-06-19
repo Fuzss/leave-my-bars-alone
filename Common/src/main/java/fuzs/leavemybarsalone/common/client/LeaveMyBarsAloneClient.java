@@ -7,8 +7,8 @@ import fuzs.puzzleslib.common.api.client.core.v1.context.GuiLayersContext;
 import fuzs.puzzleslib.common.api.client.gui.v2.ScreenHelper;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.Hud;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.player.Player;
 
@@ -21,12 +21,12 @@ public class LeaveMyBarsAloneClient implements ClientModConstructor {
                 GuiLayersContext.VEHICLE_HEALTH,
                 (GuiGraphicsExtractor guiGraphics, DeltaTracker deltaTracker) -> {
                     if (LeaveMyBarsAlone.CONFIG.get(ClientConfig.class).foodLevel) {
-                        Gui gui = Minecraft.getInstance().gui;
-                        int vehicleMaxHearts = gui.getVehicleMaxHearts(gui.getPlayerVehicleWithHealth());
-                        if (gui.minecraft.gameMode.canHurtPlayer() && vehicleMaxHearts > 0) {
-                            Player player = gui.getCameraPlayer();
+                        Hud hud = Minecraft.getInstance().gui.hud;
+                        int vehicleMaxHearts = hud.getVehicleMaxHearts(hud.getPlayerVehicleWithHealth());
+                        if (hud.minecraft.gameMode.canHurtPlayer() && vehicleMaxHearts > 0) {
+                            Player player = hud.getCameraPlayer();
                             int posX = guiGraphics.guiWidth() / 2 + 91;
-                            gui.extractFood(guiGraphics,
+                            hud.extractFood(guiGraphics,
                                     player,
                                     guiGraphics.guiHeight()
                                             - ScreenHelper.getRightStatusBarHeight(FOOD_LEVEL_GUI_LAYER),
@@ -36,9 +36,9 @@ public class LeaveMyBarsAloneClient implements ClientModConstructor {
                 });
         context.addRightStatusBarHeightProvider(FOOD_LEVEL_GUI_LAYER, (Player player) -> {
             if (LeaveMyBarsAlone.CONFIG.get(ClientConfig.class).foodLevel) {
-                Gui gui = Minecraft.getInstance().gui;
-                int vehicleMaxHearts = gui.getVehicleMaxHearts(gui.getPlayerVehicleWithHealth());
-                return gui.minecraft.gameMode.canHurtPlayer() && vehicleMaxHearts > 0 ? 10 : 0;
+                Hud hud = Minecraft.getInstance().gui.hud;
+                int vehicleMaxHearts = hud.getVehicleMaxHearts(hud.getPlayerVehicleWithHealth());
+                return hud.minecraft.gameMode.canHurtPlayer() && vehicleMaxHearts > 0 ? 10 : 0;
             } else {
                 return 0;
             }
